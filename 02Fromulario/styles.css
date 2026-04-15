@@ -1,0 +1,124 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.form-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+}
+
+
+.form-container p {
+    font-size: 14px;
+    color: #373F47;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #373F47;
+    margin-top: 10px;
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #8B8982;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+
+input:focus {
+    border: 2px solid #AABBCC;
+}
+
+
+input[type="submit"],
+input[type="reset"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+input[type="submit"] {
+    background-color: #AABBCC;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: #373F47;
+}
+
+
+input[type="reset"] {
+    background-color: #8B8982;
+    color: white;
+}
+
+input[type="reset"]:hover {
+    background-color: #373F47;
+}
+
+
+input.error {
+    border: 2px solid red;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* ENVIAR */
+button[type="submit"] {
+    background-color: #AABBCC;
+    color: white;
+}
+
+/* BORRAR */
+button[type="reset"] {
+    background-color: #8B8982;
+    color: white;
+}
+
+button:hover {
+    background-color: #373F47;
+}

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - Comisiones</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <a href="../../index.html" class="volver">← Volver al menú</a>
+    <h1>Comisiones del Vendedor</h1>
+
+    <p class="descripcion">
+        Calcula tus comisiones (10%) y el total mensual.
+    </p>
+
+    <label>Sueldo base (mínimo $9,582.47)</label>
+    <input type="text" id="sueldo">
+
+    <h3>Ventas del mes</h3>
+
+    <input type="text" id="venta1" placeholder="Venta 1">
+    <input type="text" id="venta2" placeholder="Venta 2">
+    <input type="text" id="venta3" placeholder="Venta 3">
+
+    <div class="botones">
+        <button onclick="calcular()">Calcular</button>
+        <button class="borrar" onclick="limpiar()">Borrar</button>
+    </div>
+
+    <div id="resultado" class="resultado oculto"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```

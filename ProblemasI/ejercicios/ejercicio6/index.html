@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6 - Edad</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <a href="../../index.html" class="volver">← Volver al menú</a>
+
+    <h1>Cálculo de Edad</h1>
+
+    <p class="descripcion">
+        Selecciona tu fecha de nacimiento para calcular tu edad.
+    </p>
+
+    <label>Fecha de nacimiento</label>
+    <input type="date" id="fecha">
+
+    <div class="botones">
+        <button onclick="calcular()">Calcular</button>
+        <button class="borrar" onclick="limpiar()">Borrar</button>
+    </div>
+
+    <div id="resultado" class="resultado oculto"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```

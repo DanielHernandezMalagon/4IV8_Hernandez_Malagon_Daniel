@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5 - Porcentajes</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <a href="../../index.html" class="volver">← Volver al menú</a>
+
+    <h1>Porcentaje de Estudiantes</h1>
+
+    <p class="descripcion">
+        Calcula el porcentaje de hombres y mujeres en el grupo.
+    </p>
+
+    <label>Número de hombres</label>
+    <input type="text" id="hombres" placeholder="Ejemplo: 10">
+
+    <label>Número de mujeres</label>
+    <input type="text" id="mujeres" placeholder="Ejemplo: 15">
+
+    <div class="botones">
+        <button onclick="calcular()">Calcular</button>
+        <button class="borrar" onclick="limpiar()">Borrar</button>
+    </div>
+
+    <div id="resultado" class="resultado oculto"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```

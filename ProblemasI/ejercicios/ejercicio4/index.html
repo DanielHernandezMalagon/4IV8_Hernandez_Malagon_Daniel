@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4 - Calificación Final</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <a href="../../index.html" class="volver">← Volver al menú</a>
+
+    <h1>Calificación Final</h1>
+
+    <p class="descripcion">
+        Calcula tu calificación final con base en parciales, examen y trabajo.
+    </p>
+
+    <h3>Parciales (55%)</h3>
+    <input type="text" id="p1" placeholder="Parcial 1">
+    <input type="text" id="p2" placeholder="Parcial 2">
+    <input type="text" id="p3" placeholder="Parcial 3">
+
+    <h3>Examen final (30%)</h3>
+    <input type="text" id="examen">
+
+    <h3>Trabajo final (15%)</h3>
+    <input type="text" id="trabajo">
+
+    <div class="botones">
+        <button onclick="calcular()">Calcular</button>
+        <button class="borrar" onclick="limpiar()">Borrar</button>
+    </div>
+
+    <div id="resultado" class="resultado oculto"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```

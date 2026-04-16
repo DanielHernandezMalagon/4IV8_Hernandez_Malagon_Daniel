@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Inversión bancaria</title>
+
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="../../index.html" class="volver">← Volver al menú</a>
+        <h1>Inversión Bancaria</h1>
+
+        <p class="descripcion">
+            Ingresa tu capital y selecciona los meses para calcular tu ganancia con un interés del 2% mensual.
+        </p>
+
+        <form id="formulario">
+            
+            <label for="capital">
+                Capital a invertir
+                <span>($1,000 a $100,000)</span>
+            </label>
+            <input 
+                type="text" 
+                id="capital" 
+                placeholder="Ejemplo: 15000"
+                autocomplete="off"
+            >
+
+            <label for="meses">Meses a calcular</label>
+            <select id="meses">
+                <option value="">Selecciona una opción</option>
+                <option value="1">1 mes</option>
+                <option value="3">3 meses</option>
+                <option value="6">6 meses</option>
+                <option value="9">9 meses</option>
+                <option value="12">12 meses</option>
+                <option value="18">18 meses</option>
+                <option value="24">24 meses</option>
+            </select>
+
+            <div class="botones">
+                <button type="button" onclick="calcularGanancia()">Calcular</button>
+                <button type="button" class="borrar" onclick="limpiarFormulario()">Borrar</button>
+            </div>
+
+        </form>
+
+        <div id="resultado" class="resultado oculto"></div>
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+```

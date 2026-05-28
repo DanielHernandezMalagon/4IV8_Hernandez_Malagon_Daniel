@@ -1,3 +1,5 @@
+//Codigo tal cual lo hicimos en la escuela
+
 //primero necesitamos crear un servidor para la aplicacion y ahi mismo montar nuestra bd
 //este es el modulo nativo para cualquier servidor
 const http = require('http');

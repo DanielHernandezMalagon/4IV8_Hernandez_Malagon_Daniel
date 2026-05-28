@@ -1,0 +1,132 @@
+
+:root{
+    --color1:#AABABC;
+    --color2:#888982;
+    --color3:#373F47;
+    --color4:#C3C9E9;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:var(--color1);
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.Ejercicio01{
+    width:100%;
+    max-width:700px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+/* FORMULARIO */
+form label{
+    display:block;
+
+    text-align:center;
+
+    font-size:1.5rem;
+    font-weight:bold;
+
+    color:var(--color3);
+
+    margin-bottom:25px;
+}
+
+/* TABLA */
+.container-table{
+    width:100%;
+}
+
+.table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.table td{
+    padding:15px;
+    color:var(--color3);
+    font-size:1rem;
+}
+
+/* INPUTS */
+input[type="text"]{
+    width:100%;
+
+    padding:10px;
+
+    border:2px solid var(--color2);
+
+    border-radius:8px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+input[type="text"]:focus{
+    border-color:var(--color3);
+}
+
+/* BOTONES */
+input[type="button"]{
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:var(--color3);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:1rem;
+}
+
+input[type="button"]:hover{
+    background:var(--color4);
+    color:black;
+
+    transform:translateY(-3px);
+}
+
+/* READONLY */
+input[readonly]{
+    background:#f1f1f1;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+
+    .table td{
+        display:block;
+        width:100%;
+    }
+
+}

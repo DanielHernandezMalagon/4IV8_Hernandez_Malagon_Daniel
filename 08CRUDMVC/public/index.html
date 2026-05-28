@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de compras</h1>
+        <p>Ejemplo de Gestion de Compras</p>
+        <nav class="tabs">
+            <button class="tabs active" onclick="cambiarSccion('Usuario')">Usuarios</button>
+            <button class="tabs" onclick="cambiarSccion('Producto')">Productos</button>
+            <button class="tabs active" onclick="cambiarSccion('Compras')">Compras</button>
+        </nav>
+    </header>
+
+    <section class="info-api">
+        <h3>Estado de la api</h3>
+        <div class="api-status">
+            <span id="api-metodo" class="badge"></span>
+            <span id="api-metodo" class="api-url"></span>
+            <span id="api-metodo" class="badge badge-natural"></span>
+        </div>
+    </section>
+
+    <div id="seccion-usuario" class="seccion">
+        <section class="formulario-usuario">
+            <h2 id="form-titulo-usuario">Agregar usuario</h2>
+            <form id="form-usuario" novalidate></form>
+            <input type="hidden" id="usuario-id">
+            <div class="campos-grid">
+                <label form="usuario-nombre">Nombre:</label>
+                <input type="text" id="usuario-nombre" placeholder="Aqui va tu nombre" maxlength="100" required>
+                <span class="error" id="error-usuario-nombre"></span>
+            </div>
+            <div class="campo">
+                <label form="usuario-email">Email:</label>
+                <input type="email" id="usuario-nombre" placeholder="Aqui va tu email" maxlength="100" required>
+                <span class="error" id="error-usuario-email"></span>
+            </div>
+            <div class="botones">
+                <button type="submit" id="btn-guardar.usuario">Guardar</button>
+                <button type="button" id="btn-cancelar-usuario" class="btn-secundario" style="display:none;">Cancelar</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

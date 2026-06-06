@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaLiga CRUD Pro - Gestión Total</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión LaLiga Española ⚽</h1>
+        <nav>
+            <button onclick="mostrarSeccion('jugadores')">Jugadores</button>
+            <button onclick="mostrarSeccion('equipos')">Equipos</button>
+            <button onclick="mostrarSeccion('fichajes')">Fichajes</button>
+            <button onclick="mostrarSeccion('partidos')">Partidos</button>
+            <button onclick="mostrarSeccion('clasificacion')">Tabla General</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sec-jugadores" class="modulo">
+            <h2>Registrar Jugador</h2>
+            <form id="form-jugadores">
+                <input type="text" id="j-nombre" placeholder="Nombre completo" required>
+                <input type="text" id="j-posicion" placeholder="Posición">
+                <input type="text" id="j-nacionalidad" placeholder="País">
+                <button type="submit">Guardar Jugador</button>
+            </form>
+            <table id="tabla-jugadores">
+                <thead>
+                    <tr><th>ID</th><th>Nombre</th><th>Posición</th><th>País</th><th>Equipo Actual</th><th>Acción</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="sec-equipos" class="modulo" style="display:none;">
+            <h2>Clubes de LaLiga</h2>
+            <table id="tabla-equipos">
+                <thead>
+                    <tr><th>ID</th><th>Club</th><th>Ciudad</th><th>Estadio</th><th>Plantilla</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="sec-fichajes" class="modulo" style="display:none;">
+            <h2>Realizar Fichaje 💸</h2>
+            <form id="form-fichajes">
+                <select id="sel-jugador" required><option value="">Selecciona Jugador...</option></select>
+                <select id="sel-equipo" required><option value="">Equipo destino...</option></select>
+                <input type="number" id="f-monto" placeholder="Monto €" min="0" required>
+                <button type="submit">Confirmar Fichaje</button>
+            </form>
+            <table id="tabla-fichajes">
+                <thead>
+                    <tr><th>Jugador</th><th>Destino</th><th>Monto</th><th>Fecha</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="sec-partidos" class="modulo" style="display:none;">
+            <h2>Resultados de Jornada 🏟️</h2>
+            <form id="form-partidos">
+                <select id="p-local" required></select>
+                <input type="number" id="p-goles-l" value="0" min="0" required>
+                <span> VS </span>
+                <input type="number" id="p-goles-v" value="0" min="0" required>
+                <select id="p-visitante" required></select>
+                <button type="submit">Guardar Resultado</button>
+            </form>
+            <table id="tabla-partidos">
+                <thead>
+                    <tr><th>Fecha</th><th>Local</th><th>Score</th><th>Visitante</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="sec-clasificacion" class="modulo" style="display:none;">
+            <h2>Tabla de Posiciones 🏆</h2>
+            <table id="tabla-puntos">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Club</th>
+                        <th>Puntos</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

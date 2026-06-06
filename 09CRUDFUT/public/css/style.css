@@ -1,0 +1,180 @@
+/* Importar una fuente moderna y deportiva */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+:root {
+    --verde-cesped: #27ae60;
+    --verde-oscuro: #1e8449;
+    --dorado: #f1c40f;
+    --gris-fondo: #f4f7f6;
+    --negro-deportivo: #2c3e50;
+    --blanco: #ffffff;
+    --rojo-error: #e74c3c;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--gris-fondo);
+    margin: 0;
+    color: var(--negro-deportivo);
+}
+
+header {
+    background: linear-gradient(135deg, var(--negro-deportivo) 0%, #1a252f 100%);
+    color: var(--blanco);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 5px solid var(--verde-cesped);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Navegación estilo Menú Deportivo */
+nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav button {
+    background-color: transparent;
+    color: var(--blanco);
+    border: 2px solid var(--verde-cesped);
+    padding: 10px 20px;
+    font-weight: 700;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+nav button:hover {
+    background-color: var(--verde-cesped);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+}
+
+/* Contenedor Principal */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.modulo {
+    background-color: var(--blanco);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-left: 8px solid var(--verde-cesped);
+}
+
+h2 {
+    color: var(--negro-deportivo);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Formularios */
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--verde-cesped);
+}
+
+button[type="submit"] {
+    background-color: var(--verde-cesped);
+    color: white;
+    border: none;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--verde-oscuro);
+}
+
+/* Tablas estilo Pro */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--blanco);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+th {
+    background-color: var(--negro-deportivo);
+    color: var(--blanco);
+    padding: 15px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background-color: #f1f8f4;
+}
+
+/* Badge de Puntos en la Clasificación */
+.puntos-badge {
+    background-color: var(--negro-deportivo);
+    color: var(--dorado);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: 800;
+}
+
+/* Botón de eliminar (X) */
+td button {
+    background-color: var(--rojo-error);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.5rem; }
+    form { grid-template-columns: 1fr; }
+}

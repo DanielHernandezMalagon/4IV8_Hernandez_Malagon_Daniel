@@ -3,94 +3,73 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-//servidor para iniciarlizar con express
+const PORT = process.env.PORT || 3000;
 
-const Port = process.env.PORT || 3000;
+// --- 1. MIDDLEWARES (Configuraciones base) ---
 
-//para poder aplicar el MVC necesitamos un intermediario que se va a encargar de ser un mesero (middleware), el cual para cada peticion que pasa por la ruta de la vista, obtiene una petición y la envia a un controlador
-
+// Permite que el frontend se comunique con el backend
 app.use(cors());
 
-//las peticiones las debemos de atender en un formato JSON, lo que permite poder detectar los elementos bajo los criterios clave, valor
-
+// Permite que el servidor entienda datos JSON
 app.use(express.json());
 
-//que se debe de tener una ruta personalizada por cada tipo de petición next es la ruta a la cual se va atender el tipo de petión o de respuesta
+// Permite leer datos de formularios
+app.use(express.urlencoded({ extended: true }));
 
+// Logger para ver qué pasa en la consola (peticiones)
 app.use((req, res, next) => {
     console.log(`[${new Date().toLocaleTimeString()}] ${req.method} ${req.url}`);
     next();
 });
 
-//debemos definir las rutas para los archivos
-app.use(express.static(path.join(__dirname, '--', 'public')));
+// Servir los archivos de la carpeta public (HTML, CSS, JS del cliente)
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
-//vamos a manejar las rutas de los recursos que se van a obtener por medio de las peticiones o respuestas
-//pueden existen rutas como app.use('api/usuarios', usuariosRouter) todas las rutas son los metodos posibles para cada formulario
-//router.get('/')
-//router.get('/usuarios')
-//router.post('/')
-//router.get('/:id')
 
-const usuariosRouter = require('./routes/usuarios');
-const productosRouter = require('./routes/productos');
-const comprasRouter = require('./routes/compras');
+// --- 2. RUTAS DE LOS RECURSOS (MVC) ---
+
+const usuariosRouter = require('./Routers/usuarios');
+const productosRouter = require('./Routers/productos');
+const comprasRouter = require('./Routers/compras');
 
 app.use('/api/usuarios', usuariosRouter);
 app.use('/api/productos', productosRouter);
 app.use('/api/compras', comprasRouter);
 
 
-//vamos a documentar cada endpoint
+// --- 3. DOCUMENTACIÓN Y MANEJO DE ERRORES ---
+
+// Ruta base para probar que el servidor sirve
 app.get('/api', (req, res) => {
     res.json({
-        status : 'success',
-        message : 'API REST ',
-        endpoint : {
-            usuarios : {
-                listar : 'GET /api/usuarios',
-                obtener : 'GET /api/usuarios/:id',
-                crear : 'POST /api/usuarios',
-                actualizar : 'PUT /api/usuarios/:id',
-                eliminar : 'DELETE /api/usuarios/:id'
-            },
-            productos : {
-                listar : 'GET /api/productos',
-                obtener : 'GET /api/productos/:id',
-                crear : 'POST /api/productos',
-                actualizar : 'PUT /api/productos/:id',
-                eliminar : 'DELETE /api/productos/:id'
-            },
-            compras : {
-                listar : 'GET /api/compras',
-                obtener : 'GET /api/compras/:id',
-                crear : 'POST /api/compras',
-                actualizar : 'PUT /api/compras/:id',
-                eliminar : 'DELETE /api/compras/:id'
-            }
-
-        }
+        status: 'success',
+        message: 'API del Sistema de Compras Activa',
+        version: '1.0.0'
     });
 });
 
-//vamos a crear una funcion para las rutas inexisten
-app.use('/api/*', (req, res) => {
+// Manejador para rutas NO encontradas (404)
+// Corregido para evitar el error de Path-to-Regexp
+app.use((req, res) => {
     res.status(404).json({
-        status : 'error',
-        message : 'Ruta no encontrada'
+        status: 'error',
+        message: 'Ruta no encontrada'
     });
-    res.send('Errores.html');
 });
 
-//necesitamos un manejador de errores
-app.use((err, req, res, next) =>{
-    console.log('error no manejado: ', err.message);
+// Manejador de errores generales del servidor
+app.use((err, req, res, next) => {
+    console.error('Error interno:', err.message);
     res.status(500).json({
-        status : 'error',
-        message : 'Error interno del servidor'
+        status: 'error',
+        message: 'Ocurrió un error en el servidor'
     });
 });
 
+
+// --- 4. LANZAR SERVIDOR ---
 app.listen(PORT, () => {
-    console.log('Servidor inicializado');
+    console.log(`\n✅ Servidor listo y escuchando en el puerto ${PORT}`);
+    console.log(`🔗 URL: http://localhost:${PORT}`);
+    console.log(`🚀 Presiona Ctrl + C para detenerlo\n`);
 });

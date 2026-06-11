@@ -1,79 +1,124 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de evidencias</title>
-
-    <!-- CSS -->
+    <title>Portafolio de Evidencias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <div class="bg-decorations">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+        <div class="grid-pattern"></div>
+    </div>
+
     <div class="container">
 
-        <h1>Portafolio de Evidencias</h1>
+        <div class="portfolio-wrapper">
+            
+            <header class="portfolio-header">
+                <h1>Portafolio de Evidencias</h1>
+                <p class="descripcion-principal">Este es el portafolio de evidencias de <span>Hernandez Malagon Daniel 4IV8</span>.</p>
+                <p class="descripcion-secundaria">Aquí se encuentran las prácticas y ejercicios desarrollados en programación.</p>
+            </header>
 
-        <p class="descripcion">
-            Este es el portafolio de evidencias de Hernandez Malagon Daniel.
-        </p>
+            <main class="lista">
+                <a href="./01PrimeraPractica/inicio.html" class="card">
+                    <div class="card-content">
+                        <h2>Práctica 01</h2>
+                        <p>Página de inicio</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
 
-        <p class="descripcion">
-            Aquí se encuentran las prácticas y ejercicios desarrollados en programación.
-        </p>
+                <a href="./02Fromulario/formulario.html" class="card">
+                    <div class="card-content">
+                        <h2>Práctica 02</h2>
+                        <p>Formulario HTML</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
 
-        <div class="lista">
+                <a href="./03EjerciciosBasicos/01Ejercicio01.html" class="card">
+                    <div class="card-content">
+                        <h2>Práctica 03</h2>
+                        <p>Ejercicios básicos JS</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
 
-            <a href="./01PrimeraPractica/inicio.html" class="card">
-                <h2>Práctica 01</h2>
-                <p>Página de inicio</p>
-            </a>
+                <a href="./04Algoritmia/algoritmia.html" class="card">
+                    <div class="card-content">
+                        <h2>Práctica 04</h2>
+                        <p>Algoritmia</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
 
-            <a href="./02Fromulario/formulario.html" class="card">
-                <h2>Práctica 02</h2>
-                <p>Formulario HTML</p>
-            </a>
+                <a href="./ProblemasI/index.html" class="card">
+                    <div class="card-content">
+                        <h2>Práctica 05</h2>
+                        <p>Problemas</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
 
-            <a href="./03EjerciciosBasicos/01Ejercicio01.html" class="card">
-                <h2>Práctica 03</h2>
-                <p>Ejercicios básicos JS</p>
-            </a>
+                <a href="./06Rompecabezas/rompecabezas.html" class="card">
+                    <div class="card-content">
+                        <h2>Práctica 06</h2>
+                        <p>Rompecabezas</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
 
-            <a href="./04Algoritmia/algoritmia.html" class="card">
-                <h2>Práctica 04</h2>
-                <p>Algoritmia</p>
-            </a>
+                <a href="./07CRUD/public/index.html" class="card">
+                    <div class="card-content">
+                        <h2>Práctica 07</h2>
+                        <p>CRUD</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
 
-            <a href="./ProblemasI/index.html" class="card">
-                <h2>Práctica 05</h2>
-                <p>Problemas</p>
-            </a>
+                <a href="./07CRUD_EXPRESS/public/index.html" class="card">
+                    <div class="card-content">
+                        <h2>Práctica 07 EXPRESS</h2>
+                        <p>CRUD con Express</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
 
-            <a href="./06Rompecabezas/rompecabezas.html" class="card">
-                <h2>Práctica 06</h2>
-                <p>Rompecabezas</p>
-            </a>
+                <a href="./08CRUDMVC/public/index.html" class="card">
+                    <div class="card-content">
+                        <h2>Práctica 08</h2>
+                        <p>CRUD MVC - Examen Parcial 2</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
 
-            <a href="./07CRUD/public/index.html" class="card">
-                <h2>Práctica 07</h2>
-                <p>CRUD</p>
-            </a>
+                <a href="./09CRUDFUT/public/index.html" class="card">
+                    <div class="card-content">
+                        <h2>Práctica 09</h2>
+                        <p>CRUDFUT - Examen Parcial 3</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            </main>
 
-            <a href="./07CRUD_EXPRESS/public/index.html" class="card">
-                <h2>Práctica 07 EXPRESS</h2>
-                <p>CRUD con Express</p>
-            </a>
-
-            <a href="./08CRUDMVC/public/index.html" class="card">
-                <h2>Práctica 08</h2>
-                <p>CRUD MVC</p>
-            </a>
+            <footer class="portfolio-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">
+                    <p>&copy; 2026 Daniel Hernández Malagón.</p>
+                    <p class="footer-tag">Desarrollo Web</p>
+                </div>
+            </footer>
 
         </div>
-
     </div>
 
 </body>
 </html>
-```

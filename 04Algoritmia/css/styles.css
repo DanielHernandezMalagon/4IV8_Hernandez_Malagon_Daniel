@@ -1,97 +1,262 @@
-
 :root {
     --color1: #AABABC;
     --color2: #888982;
     --color3: #373F47;
     --color4: #C3C9E9;
+    --text-dark: #242a30;
+    --card-shadow: rgba(55, 63, 71, 0.06);
+    --card-shadow-hover: rgba(55, 63, 71, 0.15);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Serif', serif;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
 }
 
 body {
     background-color: var(--color1);
-    padding: 20px;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* CONTENEDOR GENERAL */
+.bg-decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.glow-1 {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+}
+
+.glow-2 {
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(195, 201, 233, 0.35) 0%, transparent 70%);
+}
+
+.grid-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
 .container {
+    width: 100%;
     max-width: 900px;
     margin: auto;
 }
 
-/* TARJETAS DE PROBLEMAS */
-.problema-container {
-    background: white;
-    margin-bottom: 25px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+.container-back {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
 }
 
-/* TITULOS */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--color3);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 12px rgba(55, 63, 71, 0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-back:hover {
+    background: var(--color3);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(55, 63, 71, 0.15);
+}
+
+.btn-back .arrow {
+    transition: transform 0.3s ease;
+}
+
+.btn-back:hover .arrow {
+    transform: translateX(-4px);
+}
+
+.portfolio-wrapper {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 35px;
+    border-radius: 32px;
+    box-shadow: 0 30px 70px rgba(55, 63, 71, 0.12);
+}
+
+.problema-container {
+    background: white;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px var(--card-shadow);
+    border: 1px solid rgba(55, 63, 71, 0.02);
+}
+
+.problema-container:last-child {
+    margin-bottom: 0;
+}
+
 .Problema-titulo {
     color: var(--color3);
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
 
 h3 {
-    color: var(--color2);
+    color: #4f5759;
     font-size: 0.95rem;
-    margin-bottom: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
-/* INPUTS */
 .problema-input {
     width: 100%;
-    padding: 10px;
-    border: 2px solid var(--color2);
-    border-radius: 8px;
+    padding: 12px 16px;
+    border: 1px solid rgba(136, 137, 130, 0.3);
+    border-radius: 12px;
+    background-color: #fafafa;
+    color: var(--text-dark);
+    font-size: 0.95rem;
     outline: none;
-    margin-bottom: 10px;
+    transition: all 0.3s ease;
 }
 
 .problema-input:focus {
     border-color: var(--color3);
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(55, 63, 71, 0.08);
 }
 
-/* BOTONES */
 .problema-button {
-    padding: 10px 15px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     background: var(--color3);
     color: white;
+    font-size: 0.95rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: 0.3s;
+    margin-top: 10px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(55, 63, 71, 0.1);
 }
 
 .problema-button:hover {
     background: var(--color4);
-    color: black;
-}
-
-/* RESULTADOS */
-.problema-output {
-    margin-top: 15px;
-    padding: 10px;
-    background: var(--color4);
-    border-radius: 8px;
     color: var(--color3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--card-shadow-hover);
 }
 
-/* TABLAS */
+.problema-output {
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(195, 201, 233, 0.25);
+    border: 1px solid rgba(195, 201, 233, 0.4);
+    border-radius: 12px;
+    color: var(--color3);
+    font-size: 0.95rem;
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.tablas {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
 .problema-table {
-    border-collapse: collapse;
+    width: 48%;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
-.problema-table th,
+.problema-table th {
+    background-color: rgba(55, 63, 71, 0.05);
+    color: var(--color3);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 10px;
+    border-bottom: 2px solid rgba(136, 137, 130, 0.2);
+}
+
 .problema-table td {
-    border: 1px solid var(--color2);
-    padding: 8px;
+    padding: 8px 4px;
+    color: var(--color3);
+    font-size: 0.95rem;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.problema-table td:first-child {
+    width: 30px;
     text-align: center;
+}
+
+.problema-table .problema-input {
+    margin-bottom: 0;
+    padding: 8px 12px;
+}
+
+@media (max-width: 768px) {
+    .tablas {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .problema-table {
+        width: 100%;
+    }
+    .portfolio-wrapper {
+        padding: 20px;
+        border-radius: 24px;
+    }
+    .problema-container {
+        padding: 20px;
+    }
 }

@@ -1,6 +1,6 @@
 const API_URL = 'http://localhost:3000/api';
 
-// 1. MANEJO DE VISTAS
+//MANEJO DE VISTAS
 function mostrarSeccion(seccion) {
     document.querySelectorAll('.modulo').forEach(sec => sec.style.display = 'none');
     document.getElementById(`sec-${seccion}`).style.display = 'block';
@@ -12,7 +12,7 @@ function mostrarSeccion(seccion) {
     if (seccion === 'clasificacion') cargarClasificacion();
 }
 
-// 2. CARGA DE DATOS (READ)
+//CARGA DE DATOS (READ)
 async function cargarJugadores() {
     const res = await fetch(`${API_URL}/jugadores`);
     const { data } = await res.json();
@@ -39,7 +39,6 @@ async function cargarEquipos() {
 async function cargarClasificacion() {
     const res = await fetch(`${API_URL}/equipos`);
     const { data } = await res.json();
-    // Los datos ya vienen ordenados por puntos desde el Backend
     document.querySelector('#tabla-puntos tbody').innerHTML = data.map((e, index) => `
         <tr>
             <td><strong>${index + 1}º</strong></td>
@@ -68,7 +67,7 @@ async function cargarPartidos() {
     `).join('');
 }
 
-// 3. SELECTS DINÁMICOS
+//SELECTS DINÁMICOS
 async function cargarSelects() {
     const resJ = await fetch(`${API_URL}/jugadores`);
     const dataJ = await resJ.json();
@@ -86,7 +85,7 @@ async function cargarSelects() {
     if(document.getElementById('p-visitante')) document.getElementById('p-visitante').innerHTML = equipoOptions;
 }
 
-// 4. ENVÍO DE DATOS CON VALIDACIONES
+//ENVÍO DE DATOS CON VALIDACIONES
 document.getElementById('form-jugadores').onsubmit = async (e) => {
     e.preventDefault();
     const nombre = document.getElementById('j-nombre').value;

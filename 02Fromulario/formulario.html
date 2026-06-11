@@ -1,45 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de formulario y su validación</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src = "./JS/validarformulario.js"></script>
+    <script src="./JS/validarformulario.js"></script>
 </head>
 <body>
-    <div class ="container">
-        <div class = "form-container">
-        <p>
-            Todos los formularios que estan en internet tienes metodos de programacion por defecto.Estos metodos nos sirven para poder hacer las acciones principales como son: 
-            Acciones para poders conectar con los servidores, a traves de las Arquitecturas cliente servidor. Es que vamos a tener por definicion que todos los formularios utilizan el metodo GET, y el segundo metodo principal es POST, aunque existen otros metodos que se encargan del intercambio de información. 
-            GET: este metodo envia por medio de la URL toda la informacion del usuario a traves del navegador. Su función principal es obtener los datos del servicio; pero eds el metodo mas vulnerable de todos derivados que se pueden generar inyecciones de codigo.
-            POST: este metodo se encarga de registrar una nueva entrada al sistema tambien utiliza la URL como envio por defecto; pero su facultad es poder ocultarla, esto significa que los datos no son visibles para el usuario comun en el navegador.
-        </p>
-        <form name=formulario method="POST" id="formulario" onsubmit="return validar(this)">
-            <label for="Nombre">
-                Nombre:
-            </label>
-            <br>
-            <input type="text" name="nombre" id="nombre" placeholder="Porfavor escriba aqui su nombre">
-            <br>
-            <label for="Edad">
-                Edad:
-            </label>
-            <br>
-            <input type="number" name="edad" id="edad" min="1" max="100" placeholder="Porfavor escriba aqui su edad">
-            <br>
-            <label for="Email">
-                Email:
-            </label>
-            <br>
-            <input type="email" name="email" id="email" placeholder="Porfavor escriba aqui su correo electrónico">
-            <br>
-            <button type="submit">📤 Enviar Registro</button>
-            <button type="reset">🗑️ Borrar Datos</button>
-        </form>
+
+    <div class="bg-decorations">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <div class="container">
+
+        <div class="container-back">
+            <a href="../index.html" class="btn-back">
+                <span class="arrow">←</span> Volver al Inicio
+            </a>
+        </div>
+
+        <div class="portfolio-wrapper">
+            
+            <div class="form-layout">
+                
+                <div class="info-card">
+                    <h2>Métodos de Envío en Formularios</h2>
+                    <p>
+                        Todos los formularios que están en internet tienen métodos de programación por defecto. Estos métodos nos sirven para poder hacer las acciones principales como son conectarse con los servidores a través de las Arquitecturas cliente-servidor.
+                    </p>
+                    <p>
+                        Por definición, todos los formularios utilizan el método <strong>GET</strong>, y el segundo método principal es <strong>POST</strong>, aunque existen otros métodos que se encargan del intercambio de información.
+                    </p>
+                    <div class="method-box get">
+                        <strong>GET:</strong> Envia por medio de la URL toda la información del usuario a través del navegador. Su función principal es obtener los datos del servicio; pero es el método más vulnerable debido a que se pueden generar inyecciones de código.
+                    </div>
+                    <div class="method-box post">
+                        <strong>POST:</strong> Se encarga de registrar una nueva entrada al sistema. También utiliza la URL como envío por defecto, pero su facultad es poder ocultarla, lo que significa que los datos no son visibles para el usuario común en el navegador.
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <h3>Registro de Usuario</h3>
+                    <form name="formulario" method="POST" id="formulario" onsubmit="return validar(this)">
+                        <div class="input-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" name="nombre" id="nombre" placeholder="Escriba aquí su nombre">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="edad">Edad:</label>
+                            <input type="number" name="edad" id="edad" min="1" max="100" placeholder="Escriba aquí su edad">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="Escriba aquí su correo electrónico">
+                        </div>
+                        
+                        <div class="button-group">
+                            <button type="submit" class="btn-submit">📤 Enviar Registro</button>
+                            <button type="reset" class="btn-reset">🗑️ Borrar Datos</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
         </div>
     </div>
+
 </body>
 </html>

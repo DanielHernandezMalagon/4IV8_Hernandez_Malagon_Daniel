@@ -1,132 +1,237 @@
-
-:root{
-    --color1:#AABABC;
-    --color2:#888982;
-    --color3:#373F47;
-    --color4:#C3C9E9;
+:root {
+    --color1: #AABABC;
+    --color2: #888982;
+    --color3: #373F47;
+    --color4: #C3C9E9;
+    --text-dark: #242a30;
+    --card-shadow: rgba(55, 63, 71, 0.06);
+    --card-shadow-hover: rgba(55, 63, 71, 0.15);
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
 }
 
-body{
-    background:var(--color1);
-
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:20px;
+body {
+    background-color: var(--color1);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* CONTENEDOR PRINCIPAL */
-.Ejercicio01{
-    width:100%;
-    max-width:700px;
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
+.bg-decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-/* FORMULARIO */
-form label{
-    display:block;
-
-    text-align:center;
-
-    font-size:1.5rem;
-    font-weight:bold;
-
-    color:var(--color3);
-
-    margin-bottom:25px;
+.glow-1 {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
 }
 
-/* TABLA */
-.container-table{
-    width:100%;
+.glow-2 {
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(195, 201, 233, 0.35) 0%, transparent 70%);
 }
 
-.table{
-    width:100%;
-    border-collapse:collapse;
+.grid-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
 }
 
-.table td{
-    padding:15px;
-    color:var(--color3);
-    font-size:1rem;
+.container-main {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
 }
 
-/* INPUTS */
-input[type="text"]{
-    width:100%;
-
-    padding:10px;
-
-    border:2px solid var(--color2);
-
-    border-radius:8px;
-
-    outline:none;
-
-    transition:.3s;
+.container-back {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
 }
 
-input[type="text"]:focus{
-    border-color:var(--color3);
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--color3);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 12px rgba(55, 63, 71, 0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* BOTONES */
-input[type="button"]{
-    width:100%;
-
-    padding:12px;
-
-    border:none;
-
-    border-radius:8px;
-
-    background:var(--color3);
-
-    color:white;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    font-size:1rem;
+.btn-back:hover {
+    background: var(--color3);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(55, 63, 71, 0.15);
 }
 
-input[type="button"]:hover{
-    background:var(--color4);
-    color:black;
-
-    transform:translateY(-3px);
+.btn-back .arrow {
+    transition: transform 0.3s ease;
 }
 
-/* READONLY */
-input[readonly]{
-    background:#f1f1f1;
+.btn-back:hover .arrow {
+    transform: translateX(-4px);
 }
 
-/* RESPONSIVE */
-@media(max-width:600px){
+.portfolio-wrapper {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 32px;
+    box-shadow: 0 30px 70px rgba(55, 63, 71, 0.12);
+}
 
-    .table td{
-        display:block;
-        width:100%;
+.Ejercicio01 {
+    width: 100%;
+    background: white;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px var(--card-shadow);
+    border: 1px solid rgba(55, 63, 71, 0.02);
+}
+
+form label {
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color3);
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+    line-height: 1.4;
+}
+
+.container-table {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td {
+    padding: 12px 15px;
+    color: var(--color3);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.table tr:has(input[type="button"]) td {
+    padding: 6px 15px 18px 15px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(136, 137, 130, 0.4);
+    background-color: #fafafa;
+    color: var(--text-dark);
+    border-radius: 12px;
+    outline: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--color3);
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(55, 63, 71, 0.08);
+}
+
+input[type="button"] {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: var(--color3);
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(55, 63, 71, 0.1);
+}
+
+input[type="button"]:hover {
+    background: var(--color4);
+    color: var(--color3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--card-shadow-hover);
+}
+
+input[name="delete"] {
+    background: rgba(136, 137, 130, 0.15);
+    color: var(--color3);
+    box-shadow: none;
+}
+
+input[name="delete"]:hover {
+    background: rgba(136, 137, 130, 0.25);
+    color: var(--color3);
+}
+
+input[readonly] {
+    background-color: #f3f4f6;
+    border-color: rgba(136, 137, 130, 0.2);
+    color: var(--color2);
+    cursor: not-allowed;
+}
+
+@media(max-width:650px) {
+    .portfolio-wrapper {
+        padding: 15px;
     }
-
+    .Ejercicio01 {
+        padding: 20px 15px;
+    }
+    .table td {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+    }
+    .table tr:has(input[type="button"]) td {
+        padding: 8px 0;
+    }
 }
